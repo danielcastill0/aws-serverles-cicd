@@ -20,8 +20,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - name: serverless deploy
-      working-directory: ./cicd-lambda
       uses: serverless/github-action@v3
+      working-directory: ./cicd-lambda
+
       with:
         args: deploy
       env:
