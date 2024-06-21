@@ -5,12 +5,14 @@ on:
     branches:
       - main
 
-working-directory: ./cicd-lambda
 
 jobs:
   deploy:
     name: deploy
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./cicd-lambda
     strategy:
       matrix:
         node-version: [20.x]
