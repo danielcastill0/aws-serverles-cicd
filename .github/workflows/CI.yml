@@ -5,6 +5,8 @@ on:
     branches:
       - main
 
+working-directory: ./cicd-lambda
+
 jobs:
   deploy:
     name: deploy
@@ -21,7 +23,6 @@ jobs:
     - run: npm ci
     - name: serverless deploy
       uses: serverless/github-action@v3
-      working-directory: ./cicd-lambda
 
       with:
         args: deploy
